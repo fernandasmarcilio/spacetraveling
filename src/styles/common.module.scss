@@ -2,3 +2,14 @@
   max-width: 700px;
   margin: 0 auto;
 }
+
+.heading {
+  color: var(--color-heading);
+  font-weight: bold;
+  line-height: 2.125rem;
+}
+
+.subtitle {
+  color: var(--color-body);
+  font-size: 1.125rem;
+}
