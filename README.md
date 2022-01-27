@@ -18,6 +18,7 @@ Depois em "Custom type", clique em criar um "Repeatable Type" com 8 campos:
 - author. Tipo: Key Text
 - banner. Tipo: Image
 - Content. Tipo: Group
+
   campos internos do Content:
   - heading. Tipo: Key Text
   - body. Tipo: Rich Text
