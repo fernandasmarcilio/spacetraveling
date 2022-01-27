@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import { FiCalendar, FiUser, FiClock } from 'react-icons/fi';
 import { format } from 'date-fns';
@@ -48,6 +49,10 @@ export default function Post({ post }: PostProps): JSX.Element {
 
   return (
     <>
+      <Head>
+        <title>{post.data.title} | spacetraveling</title>
+      </Head>
+
       <img src={post.data.banner.url} alt="Banner" className={styles.banner} />
       <div className={commonStyles.container}>
         <h2 className={`${commonStyles.heading} ${styles.title}`}>

@@ -1,12 +1,12 @@
+import { useState } from 'react';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 
 import Prismic from '@prismicio/client';
-import { FiCalendar, FiUser } from 'react-icons/fi';
-
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import { useState } from 'react';
+import { FiCalendar, FiUser } from 'react-icons/fi';
 import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
@@ -61,36 +61,42 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
   };
 
   return (
-    <div className={commonStyles.container}>
-      {posts.map(post => (
-        <Link key={post.uid} href={`post/${post.uid}`}>
-          <a className={styles.post}>
-            <h2 className={`${commonStyles.heading} ${styles.title}`}>
-              {post.data.title}
-            </h2>
-            <p className={commonStyles.subtitle}>{post.data.subtitle}</p>
-            <div className={styles.details}>
-              <span>
-                <FiCalendar className={styles.icon} />
-                {format(new Date(post.first_publication_date), 'd MMM yyyy', {
-                  locale: ptBR,
-                })}
-              </span>
-              <span>
-                <FiUser className={styles.icon} />
-                {post.data.author}
-              </span>
-            </div>
-          </a>
-        </Link>
-      ))}
+    <>
+      <Head>
+        <title>Home | spacetraveling</title>
+      </Head>
 
-      {nextPage && (
-        <button type="button" className={styles.loadPost} onClick={loadPosts}>
-          Carregar mais posts
-        </button>
-      )}
-    </div>
+      <div className={commonStyles.container}>
+        {posts.map(post => (
+          <Link key={post.uid} href={`post/${post.uid}`}>
+            <a className={styles.post}>
+              <h2 className={`${commonStyles.heading} ${styles.title}`}>
+                {post.data.title}
+              </h2>
+              <p className={commonStyles.subtitle}>{post.data.subtitle}</p>
+              <div className={styles.details}>
+                <span>
+                  <FiCalendar className={styles.icon} />
+                  {format(new Date(post.first_publication_date), 'd MMM yyyy', {
+                    locale: ptBR,
+                  })}
+                </span>
+                <span>
+                  <FiUser className={styles.icon} />
+                  {post.data.author}
+                </span>
+              </div>
+            </a>
+          </Link>
+        ))}
+
+        {nextPage && (
+          <button type="button" className={styles.loadPost} onClick={loadPosts}>
+            Carregar mais posts
+          </button>
+        )}
+      </div>
+    </>
   );
 }
 
