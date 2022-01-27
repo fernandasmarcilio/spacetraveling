@@ -6,7 +6,7 @@ Spacetraveling é um desafio de um blog feito com Next.js e Prismic CMS, propost
 ## Instalação
 Dentro da pasta spacetraveling, instale as depedências com o comando: ``yarn install``.
 
-## Configuração do Prismic CMS
+### Configuração do Prismic CMS
 Crie uma conta no [<https://prismic.io/>].
 
 No dashborad, crie um repositório.
@@ -17,7 +17,7 @@ Depois em "Custom type", clique em criar um "Repeatable Type" com 8 campos:
 - subtitle. Tipo: Key Text
 - author. Tipo: Key Text
 - banner. Tipo: Image
-- Content. Tipo: Group
+- content. Tipo: Group
 
   campos internos do Content:
   - heading. Tipo: Key Text
