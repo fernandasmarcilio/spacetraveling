@@ -6,6 +6,7 @@ Spacetraveling é um desafio de um blog feito com Next.js e Prismic CMS, propost
 ## Instalação
 Dentro da pasta spacetraveling, instale as depedências com o comando: ``yarn install``.
 
+## Configuração
 ### Configuração do Prismic CMS
 Crie uma conta no [<https://prismic.io/>].
 
